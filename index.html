@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scrapkar — Old Car. New Steel. | Govt. Authorised RVSF</title>
+<meta name="description" content="Scrapkar retires your vehicle through a Registered Vehicle Scrapping Facility. Transparent valuation, doorstep pickup, and a Certificate of Deposit.">
+<meta name="theme-color" content="#0d1526">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="container header__inner">
+    <a href="#top" class="brand" aria-label="Scrapkar Home">
+      <img src="assets/logo.png" alt="Scrapkar" class="brand__logo">
+    </a>
+    <nav class="nav" id="primaryNav" aria-label="Main navigation">
+      <a href="#why" class="nav__link">Why Scrapkar</a>
+      <a href="#vehicles" class="nav__link">Vehicles</a>
+      <a href="#recycle" class="nav__link">Scrap to Recycle</a>
+      <a href="#network" class="nav__link">Network</a>
+      <a href="#process" class="nav__link">Process</a>
+      <a href="#faq" class="nav__link">FAQ</a>
+    </nav>
+    <div class="header__actions">
+      <a href="#calculator" class="btn btn--primary btn--sm header__cta">Get Scrap Value</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero__glow hero__glow--blue"></div>
+  <div class="hero__glow hero__glow--green"></div>
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <div class="eyebrow eyebrow--green">
+        <span class="eyebrow__dot"></span> Govt. Authorised RVSF
+      </div>
+      <h1 class="hero__title">
+        OLD CAR.<br>
+        <span class="hero__title-accent">NEW STEEL.</span>
+      </h1>
+      <p class="hero__kicker">Scrapped legally. Paid fairly. Recycled fully.</p>
+      <p class="hero__lede">
+        Scrapkar retires your vehicle through a Registered Vehicle Scrapping Facility. You get a transparent valuation, doorstep pickup, and a Certificate of Deposit — and the vehicle goes back into use as raw material.
+      </p>
+      <div class="hero__actions">
+        <a href="#calculator" class="btn btn--cta btn--lg">Get My Scrap Value</a>
+        <a href="#process" class="btn btn--ghost btn--lg">How It Works</a>
+      </div>
+      <ul class="hero__trust">
+        <li><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>MoRTH Authorised</li>
+        <li><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>Instant Bank Transfer</li>
+        <li><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Certificate of Deposit</li>
+      </ul>
+    </div>
+
+    <div class="hero__calc" id="calculator">
+      <div class="calc">
+        <div class="calc__head">
+          <span class="calc__tag">Instant Estimate</span>
+          <h2 class="calc__title">Calculate Scrap Value</h2>
+          <p class="calc__sub">Get an estimate in under a minute.</p>
+        </div>
+        <form class="calc__form" id="calcForm" novalidate>
+          <div class="field">
+            <label for="calcType">Vehicle Type</label>
+            <select id="calcType" required>
+              <option value="" disabled selected>Select category</option>
+              <option value="car_hatchback">Car — Hatchback</option>
+              <option value="car_sedan">Car — Sedan</option>
+              <option value="car_suv">Car — SUV / MUV</option>
+              <option value="two_wheeler">Two Wheeler</option>
+              <option value="three_wheeler">Three Wheeler</option>
+              <option value="commercial_lcv">Commercial — Tempo / LCV</option>
+              <option value="commercial_truck">Heavy Truck / Bus</option>
+              <option value="electric_vehicle">Electric / Hybrid</option>
+              <option value="fleet_bulk">Fleet & Bulk</option>
+            </select>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="calcMake">Make</label>
+              <input type="text" id="calcMake" placeholder="Maruti, Hyundai…" required>
+            </div>
+            <div class="field">
+              <label for="calcModel">Model</label>
+              <input type="text" id="calcModel" placeholder="Swift, City…" required>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="calcYear">Year</label>
+              <select id="calcYear" required>
+                <option value="" disabled selected>Year</option>
+                <option value="2009">2009 or older</option>
+                <option value="2012">2012</option>
+                <option value="2015">2015</option>
+                <option value="2018">2018</option>
+                <option value="2021">2021 or newer</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="calcCity">City</label>
+              <input type="text" id="calcCity" placeholder="Pune, Delhi…" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="calcPhone">Mobile Number</label>
+            <div class="phone">
+              <span class="phone__prefix">+91</span>
+              <input type="tel" id="calcPhone" placeholder="10-digit mobile" maxlength="10" inputmode="numeric" required>
+            </div>
+            <span class="field__error" id="calcPhoneError">Enter a valid 10-digit Indian mobile number.</span>
+          </div>
+          <button type="submit" class="btn btn--cta btn--block calc__submit">
+            Get My Scrap Value
+            <svg class="btn__arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <p class="calc__note">Zero spam. Benchmarked against live government RVSF metal rates.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. WHY SCRAPKAR ============ -->
+<section class="why" id="why">
+  <div class="container why__grid">
+    <aside class="why__intro">
+      <span class="eyebrow">Why Scrapkar</span>
+      <h2 class="section-title">Four things you should expect from a scrapper.</h2>
+      <p class="why__lede">We built Scrapkar to remove every doubt you might have about handing over your vehicle. Here's what we stand by.</p>
+      <a href="#calculator" class="link-arrow">Get my scrap value
+        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </aside>
+
+    <ol class="why__list">
+      <li class="why__item">
+        <span class="why__num">01</span>
+        <div class="why__body">
+          <h3>A price you can check</h3>
+          <p>Your value is calculated from vehicle weight, type, and current metal rates. You see how the number was reached.</p>
+        </div>
+      </li>
+      <li class="why__item">
+        <span class="why__num">02</span>
+        <div class="why__body">
+          <h3>Pickup from your door</h3>
+          <p>We arrange towing from your home or office at a time you choose. You don't have to drive the vehicle anywhere.</p>
+        </div>
+      </li>
+      <li class="why__item">
+        <span class="why__num">03</span>
+        <div class="why__body">
+          <h3>Paperwork handled</h3>
+          <p>We handle de-registration and issue your Certificate of Deposit. There are no hidden charges at any stage.</p>
+        </div>
+      </li>
+      <li class="why__item">
+        <span class="why__num">04</span>
+        <div class="why__body">
+          <h3>Nothing dumped</h3>
+          <p>Fluids are drained, parts are dismantled, and materials are separated inside an authorised facility. Every stream goes to recycling.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 3. STATS STRIP ============ -->
+<section class="stats" id="stats">
+  <div class="container">
+    <p class="stats__headline">Your vehicle is worth more than scrap metal.</p>
+    <div class="stats__row">
+      <div class="stat">
+        <span class="stat__num" data-count="75">0</span><span class="stat__suffix">+</span>
+        <span class="stat__label">Cities covered</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num" data-count="100">0</span><span class="stat__suffix">%</span>
+        <span class="stat__label">Authorised process</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num" data-count="24">0</span><span class="stat__suffix">h</span>
+        <span class="stat__label">Callback time</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num" data-count="0">0</span><span class="stat__suffix"></span>
+        <span class="stat__label">Hidden charges</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. VEHICLES WE ACCEPT ============ -->
+<section class="vehicles" id="vehicles">
+  <div class="container">
+    <header class="vehicles__head">
+      <span class="eyebrow">Vehicles We Accept</span>
+      <h2 class="section-title">What can you scrap?</h2>
+      <p class="section-sub">If it has a registration number, we can retire it.</p>
+    </header>
+
+    <ul class="vehicles__list">
+      <li class="vrow" data-type="car_hatchback">
+        <span class="vrow__num">01</span>
+        <div class="vrow__icon">
+          <svg viewBox="0 0 24 24"><path d="M5 17h14M5 17a2 2 0 0 1-2-2v-3l2-5h12l2 5v3a2 2 0 0 1-2 2M7 17v2M17 17v2M7 12h10"/></svg>
+        </div>
+        <div class="vrow__copy">
+          <h3>Cars</h3>
+          <p>Hatchbacks, sedans, and SUVs. Running, damaged, or unused for years.</p>
+        </div>
+        <a href="#calculator" class="vrow__cta">Get value
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </li>
+      <li class="vrow" data-type="two_wheeler">
+        <span class="vrow__num">02</span>
+        <div class="vrow__icon">
+          <svg viewBox="0 0 24 24"><circle cx="5.5" cy="17.5" r="2.5"/><circle cx="18.5" cy="17.5" r="2.5"/><path d="M15 6h2.5L20 9.5v5.5M12.5 15h-4.5M10 6 7 12"/></svg>
+        </div>
+        <div class="vrow__copy">
+          <h3>Two Wheelers</h3>
+          <p>Motorcycles, scooters, and mopeds. Same legal process, same documentation.</p>
+        </div>
+        <a href="#calculator" class="vrow__cta">Get value
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </li>
+      <li class="vrow" data-type="three_wheeler">
+        <span class="vrow__num">03</span>
+        <div class="vrow__icon">
+          <svg viewBox="0 0 24 24"><path d="M6 18h12M4 13h15l2-4v7h-2M2 10V6h5v4"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+        </div>
+        <div class="vrow__copy">
+          <h3>Three Wheelers</h3>
+          <p>Passenger autos and cargo carriers, including permit closure.</p>
+        </div>
+        <a href="#calculator" class="vrow__cta">Get value
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </li>
+      <li class="vrow" data-type="commercial_truck">
+        <span class="vrow__num">04</span>
+        <div class="vrow__icon">
+          <svg viewBox="0 0 24 24"><rect x="1" y="3" width="14" height="13"/><polygon points="15 8 19 8 22 11 22 16 15 16 15 8"/><circle cx="4.5" cy="18.5" r="2.5"/><circle cx="15.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <div class="vrow__copy">
+          <h3>Commercial Vehicles & Trucks</h3>
+          <p>Tempos, delivery vans, buses, and heavy trucks. Valued on weight and steel content.</p>
+        </div>
+        <a href="#calculator" class="vrow__cta">Get value
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </li>
+      <li class="vrow" data-type="electric_vehicle">
+        <span class="vrow__num">05</span>
+        <div class="vrow__icon">
+          <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <div class="vrow__copy">
+          <h3>Electric Vehicles</h3>
+          <p>EVs and hybrids. Battery packs are removed and sent for safe recovery.</p>
+        </div>
+        <a href="#calculator" class="vrow__cta">Get value
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </li>
+      <li class="vrow" data-type="fleet_bulk">
+        <span class="vrow__num">06</span>
+        <div class="vrow__icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="vrow__copy">
+          <h3>Fleet & Bulk Scrapping</h3>
+          <p>For companies, transporters, and institutions retiring multiple vehicles. One point of contact, one consolidated process.</p>
+        </div>
+        <a href="#calculator" class="vrow__cta">Get value
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 5. SCRAP TO RECYCLE ============ -->
+<section class="recycle" id="recycle">
+  <div class="container">
+    <header class="recycle__head">
+      <span class="eyebrow eyebrow--green">Scrap to Recycle</span>
+      <h2 class="section-title section-title--light">Nothing here is waste.</h2>
+      <p class="section-sub section-sub--light">Hover a numbered hotspot on the vehicle — or tap a material below — to see where each part goes next.</p>
+    </header>
+
+    <div class="recycle__stage">
+      <div class="recycle__canvas" id="recycleCanvas">
+        <img src="assets/exploded_car.png"
+             alt="Scrapkar exploded car showing 14 recyclable components"
+             class="recycle__img"
+             id="recycleImg">
+
+        <!-- 14 hotspots. Hover any dot → right panel updates with matching content. -->
+        <button class="hotspot" data-part="body"       style="top:42%; left:82%;" aria-label="1 — Body Shell and Chassis"><span>1</span></button>
+        <button class="hotspot" data-part="engine"     style="top:72%; left:14%;" aria-label="2 — Engine Block and Castings"><span>2</span></button>
+        <button class="hotspot" data-part="wheels"     style="top:48%; left:5%;"  aria-label="3 — Alloy Wheels"><span>3</span></button>
+        <button class="hotspot" data-part="tyres"      style="top:40%; left:25%;" aria-label="4 — Tyres"><span>4</span></button>
+        <button class="hotspot" data-part="battery"    style="top:56%; left:57%;" aria-label="5 — Battery"><span>5</span></button>
+        <button class="hotspot" data-part="ev_battery" style="top:55%; left:72%;" aria-label="6 — EV Battery Pack"><span>6</span></button>
+        <button class="hotspot" data-part="catalytic"  style="top:74%; left:54%;" aria-label="7 — Catalytic Converter"><span>7</span></button>
+        <button class="hotspot" data-part="glass"      style="top:22%; left:30%;" aria-label="8 — Windscreen and Glass"><span>8</span></button>
+        <button class="hotspot" data-part="wiring"     style="top:34%; left:64%;" aria-label="9 — Wiring Harness"><span>9</span></button>
+        <button class="hotspot" data-part="plastics"   style="top:24%; left:46%;" aria-label="10 — Bumpers, Dashboard and Trims"><span>10</span></button>
+        <button class="hotspot" data-part="seats"      style="top:32%; left:52%;" aria-label="11 — Seats and Upholstery"><span>11</span></button>
+        <button class="hotspot" data-part="radiator"   style="top:78%; left:42%;" aria-label="12 — Radiator and AC Unit"><span>12</span></button>
+        <button class="hotspot" data-part="fluids"     style="top:82%; left:22%;" aria-label="13 — Engine Oil and Fluids"><span>13</span></button>
+        <button class="hotspot" data-part="ecu"        style="top:35%; left:74%;" aria-label="14 — ECU and Electronics"><span>14</span></button>
+      </div>
+
+      <aside class="recycle__panel" id="recyclePanel">
+        <span class="recycle__badge" id="partCategory">1 · Core Structure</span>
+        <h3 class="recycle__title" id="partName">Body Shell &amp; Chassis</h3>
+        <div class="recycle__becomes">
+          <span class="recycle__becomes-label">Becomes</span>
+          <p id="partBecomes">Construction steel, new vehicle panels</p>
+        </div>
+        <p class="recycle__desc" id="partDesc">Most of your car's weight is steel. It is shredded, melted, and rolled again into TMT bars, sheet metal, and new car bodies. Steel can be recycled repeatedly without losing strength.</p>
+        <a href="#calculator" class="btn btn--cta btn--block">Get My Scrap Value</a>
+      </aside>
+    </div>
+
+    <div class="recycle__pills" role="tablist" aria-label="Recycling streams">
+      <button class="pill is-active" data-part="body">1. Body Shell &amp; Chassis</button>
+      <button class="pill" data-part="engine">2. Engine Block &amp; Castings</button>
+      <button class="pill" data-part="wheels">3. Alloy Wheels</button>
+      <button class="pill" data-part="tyres">4. Tyres</button>
+      <button class="pill" data-part="battery">5. Battery</button>
+      <button class="pill" data-part="ev_battery">6. EV Battery Pack</button>
+      <button class="pill" data-part="catalytic">7. Catalytic Converter</button>
+      <button class="pill" data-part="glass">8. Windscreen &amp; Glass</button>
+      <button class="pill" data-part="wiring">9. Wiring Harness</button>
+      <button class="pill" data-part="plastics">10. Bumpers, Dashboard &amp; Trims</button>
+      <button class="pill" data-part="seats">11. Seats &amp; Upholstery</button>
+      <button class="pill" data-part="radiator">12. Radiator &amp; AC Unit</button>
+      <button class="pill" data-part="fluids">13. Engine Oil &amp; Fluids</button>
+      <button class="pill" data-part="ecu">14. ECU &amp; Electronics</button>
+    </div>
+
+    <p class="recycle__closing">
+      Your car goes in as one vehicle and comes out as <strong>fourteen streams of raw material.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- ============ 6. NETWORK — LIGHT SECTION + DARK CARDS ============ -->
+<section class="network network--light" id="network">
+  <div class="container">
+    <header class="network__head">
+      <span class="eyebrow">Our Network</span>
+      <h2 class="section-title">Scrapkar is closer than you think.</h2>
+      <p class="section-sub">Authorised scrapping facilities and pickup partners across India. Hover a state to see the nearest verified facility.</p>
+    </header>
+
+    <div class="network__grid">
+      <div class="network__map-wrap">
+        <label class="network__mobile-label" for="stateSelect">Select your state</label>
+        <select id="stateSelect" class="network__select">
+          <option value="MH">Maharashtra</option>
+          <option value="DL">Delhi-NCR</option>
+          <option value="KA">Karnataka</option>
+          <option value="TN">Tamil Nadu</option>
+          <option value="TS">Telangana</option>
+          <option value="GJ">Gujarat</option>
+          <option value="UP">Uttar Pradesh</option>
+          <option value="HR">Haryana</option>
+          <option value="RJ">Rajasthan</option>
+        </select>
+
+        <svg class="network__map" viewBox="0 0 620 700" xmlns="http://www.w3.org/2000/svg" aria-label="India map of Scrapkar RVSF network hubs">
+          <defs>
+            <linearGradient id="stateGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"  stop-color="#1c3a5c" stop-opacity="0.9"/>
+              <stop offset="100%" stop-color="#0f2438" stop-opacity="0.9"/>
+            </linearGradient>
+            <linearGradient id="stateActive" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"  stop-color="#0080C5" stop-opacity="0.9"/>
+              <stop offset="100%" stop-color="#70B131" stop-opacity="0.75"/>
+            </linearGradient>
+            <filter id="mapShadow" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="0" stdDeviation="14" flood-color="#0080C5" flood-opacity="0.35"/>
+            </filter>
+          </defs>
+
+          <g filter="url(#mapShadow)">
+            <path class="map__outline"
+              d="M272 30 L296 34 L310 22 L336 26 L340 42 L358 50 L374 46 L392 58
+                 L400 78 L420 92 L436 100 L452 122 L468 130 L482 152
+                 L498 158 L510 178 L504 200 L490 214 L476 210 L462 226
+                 L470 248 L458 268 L444 274 L430 268 L420 288 L432 306
+                 L426 328 L410 336 L398 356 L382 362 L368 384 L360 408
+                 L344 428 L340 452 L332 476 L336 500 L330 524 L322 548
+                 L314 570 L304 592 L292 616 L278 640 L266 662 L254 676
+                 L242 672 L236 652 L228 630 L214 612 L200 588 L192 566
+                 L182 546 L170 528 L156 510 L142 492 L128 474 L112 458
+                 L100 438 L92 418 L86 396 L78 376 L74 356 L82 336
+                 L92 318 L104 306 L118 296 L130 280 L126 262 L118 244
+                 L122 226 L136 214 L152 210 L168 202 L178 186 L190 174
+                 L204 164 L218 156 L232 146 L244 130 L256 114 L262 94
+                 L258 74 L264 54 L272 30 Z"/>
+
+            <path class="state" data-state="GJ" d="M104 306 L118 296 L130 280 L126 262 L118 244 L122 226 L136 214 L152 210 L160 224 L156 244 L146 268 L142 288 L134 308 L118 320 L106 318 Z"/>
+            <path class="state" data-state="RJ" d="M136 214 L152 210 L168 202 L178 186 L190 174 L204 164 L218 156 L232 146 L244 130 L256 114 L262 94 L252 128 L240 158 L226 186 L212 210 L198 232 L182 244 L164 244 L156 226 Z"/>
+            <path class="state" data-state="HR" d="M178 186 L190 174 L204 164 L212 178 L208 194 L196 200 L182 200 Z"/>
+            <path class="state" data-state="DL" d="M196 178 L208 176 L212 186 L204 192 L194 190 Z"/>
+            <path class="state" data-state="UP" d="M204 164 L218 156 L232 146 L244 152 L262 174 L268 196 L264 220 L252 240 L236 254 L216 252 L200 240 L192 220 L196 198 L200 180 Z"/>
+            <path class="state" data-state="MH" d="M136 314 L156 300 L180 300 L204 318 L222 344 L226 372 L214 396 L194 410 L170 412 L148 404 L134 384 L126 360 L128 336 Z"/>
+            <path class="state" data-state="TS" d="M204 320 L224 314 L244 320 L256 340 L252 364 L238 382 L220 386 L204 378 L196 358 L198 336 Z"/>
+            <path class="state" data-state="KA" d="M182 412 L206 412 L228 428 L240 452 L236 478 L220 498 L198 502 L180 492 L172 468 L174 442 Z"/>
+            <path class="state" data-state="TN" d="M198 504 L222 502 L242 520 L252 548 L248 578 L232 600 L210 606 L194 596 L188 570 L188 540 Z"/>
+          </g>
+
+          <g class="hub" data-state="GJ"><circle class="hub__pulse" cx="120" cy="298" r="16"/><circle class="hub__dot" cx="120" cy="298" r="7"/></g>
+          <g class="hub" data-state="RJ"><circle class="hub__pulse" cx="180" cy="220" r="16"/><circle class="hub__dot" cx="180" cy="220" r="7"/></g>
+          <g class="hub" data-state="HR"><circle class="hub__pulse" cx="200" cy="188" r="16"/><circle class="hub__dot" cx="200" cy="188" r="7"/></g>
+          <g class="hub" data-state="DL"><circle class="hub__pulse" cx="204" cy="184" r="16"/><circle class="hub__dot" cx="204" cy="184" r="7"/></g>
+          <g class="hub" data-state="UP"><circle class="hub__pulse" cx="236" cy="196" r="16"/><circle class="hub__dot" cx="236" cy="196" r="7"/></g>
+          <g class="hub" data-state="MH"><circle class="hub__pulse" cx="182" cy="352" r="16"/><circle class="hub__dot" cx="182" cy="352" r="7"/></g>
+          <g class="hub" data-state="TS"><circle class="hub__pulse" cx="226" cy="352" r="16"/><circle class="hub__dot" cx="226" cy="352" r="7"/></g>
+          <g class="hub" data-state="KA"><circle class="hub__pulse" cx="204" cy="456" r="16"/><circle class="hub__dot" cx="204" cy="456" r="7"/></g>
+          <g class="hub" data-state="TN"><circle class="hub__pulse" cx="220" cy="552" r="16"/><circle class="hub__dot" cx="220" cy="552" r="7"/></g>
+        </svg>
+      </div>
+
+      <aside class="facility" id="facilityCard">
+        <div class="facility__head">
+          <span class="facility__state" id="facState">Maharashtra</span>
+          <span class="facility__status">Verified RVSF</span>
+        </div>
+        <h3 class="facility__title" id="facTitle">Western Region Scrapping Facilities</h3>
+        <div class="facility__list" id="facList"><!-- populated by JS --></div>
+        <a href="#contact" class="btn btn--cta btn--block facility__cta">Request Pickup in This State</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. PROCESS ============ -->
+<section class="process" id="process">
+  <div class="container">
+    <header class="process__head">
+      <span class="eyebrow">How It Works</span>
+      <h2 class="section-title">Scrapping made simple.</h2>
+      <p class="section-sub">Four steps, from quote to certificate.</p>
+    </header>
+
+    <ol class="process__steps">
+      <li class="step">
+        <div class="step__icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <span class="step__num">01</span>
+        <h3>Get your estimate</h3>
+        <p>Enter your vehicle details. You get an estimated scrap value straight away.</p>
+      </li>
+      <li class="step">
+        <div class="step__icon">
+          <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <span class="step__num">02</span>
+        <h3>Schedule pickup</h3>
+        <p>Pick a date and place. We send the tow vehicle.</p>
+      </li>
+      <li class="step">
+        <div class="step__icon">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 2l3 3-3 3"/><circle cx="12" cy="12" r="10"/></svg>
+        </div>
+        <span class="step__num">03</span>
+        <h3>Verification</h3>
+        <p>Chassis and engine numbers are matched with VAHAN records at the facility. Your documents are checked.</p>
+      </li>
+      <li class="step">
+        <div class="step__icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><circle cx="12" cy="15" r="2"/></svg>
+        </div>
+        <span class="step__num">04</span>
+        <h3>Payment and certificate</h3>
+        <p>Payment goes to your bank account. Your Certificate of Deposit is issued and de-registration is initiated.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 8. REVIEWS — PREMIUM DARK, WIDE, LEFT-ALIGNED ============ -->
+<section class="reviews" id="reviews">
+  <div class="reviews__glow reviews__glow--blue"></div>
+  <div class="reviews__glow reviews__glow--green"></div>
+  <div class="container">
+    <header class="reviews__head">
+      <span class="eyebrow eyebrow--green">Reviews</span>
+      <h2 class="section-title section-title--light">What owners say.</h2>
+      <p class="section-sub section-sub--light">From people who have scrapped with us.</p>
+    </header>
+
+    <div class="testimonial" id="testimonial" aria-live="polite">
+      <button class="testimonial__nav testimonial__nav--prev" id="tPrev" aria-label="Previous review">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+
+      <div class="testimonial__viewport">
+        <div class="testimonial__track" id="tTrack">
+
+          <figure class="testimonial__slide is-active">
+            <span class="testimonial__quote-mark">“</span>
+            <blockquote>The entire process was smooth. The value quoted on the calculator was honored without unnecessary deductions. The tow truck arrived right on time, and the official Certificate of Deposit arrived within 48 hours.</blockquote>
+            <figcaption>
+              <span class="testimonial__avatar">AS</span>
+              <div class="testimonial__meta">
+                <strong>Amit Sharma</strong>
+                <span>Pune, MH · Maruti WagonR (2007)</span>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial__slide">
+            <span class="testimonial__quote-mark">“</span>
+            <blockquote>With Delhi's 15-year petrol ban, we needed a fully legal scrapping service so there would be zero risk of vehicle misuse. Scrapkar matched the chassis on VAHAN and provided the legal de-registration receipt immediately.</blockquote>
+            <figcaption>
+              <span class="testimonial__avatar">PP</span>
+              <div class="testimonial__meta">
+                <strong>Priya Patel</strong>
+                <span>New Delhi, DL · Hyundai Santro (2008)</span>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial__slide">
+            <span class="testimonial__quote-mark">“</span>
+            <blockquote>Retired our family Honda City after 16 loyal years. Certified destruction ensured the engine could never be misused. Used the Certificate of Deposit to get the road tax discount on my new car.</blockquote>
+            <figcaption>
+              <span class="testimonial__avatar">RN</span>
+              <div class="testimonial__meta">
+                <strong>Rajesh Nair</strong>
+                <span>Bengaluru, KA · Honda City (2006)</span>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial__slide">
+            <span class="testimonial__quote-mark">“</span>
+            <blockquote>We retired two commercial delivery vans. Scrapkar gave us one dedicated point of contact, consolidated the paperwork, and transferred funds directly to our company account within a day.</blockquote>
+            <figcaption>
+              <span class="testimonial__avatar">SS</span>
+              <div class="testimonial__meta">
+                <strong>Sunita Sen</strong>
+                <span>Kolkata, WB · Tata Ace Fleet (2009)</span>
+              </div>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+
+      <button class="testimonial__nav testimonial__nav--next" id="tNext" aria-label="Next review">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+
+    <div class="testimonial__dots" id="tDots" role="tablist" aria-label="Review navigation"></div>
+
+  </div>
+</section>
+
+<!-- ============ 9. FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="container faq__grid">
+    <aside class="faq__intro">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="section-title">Frequently asked questions</h2>
+      <p class="faq__lede">Everything about certificates, documents, payment, and timelines — in one place.</p>
+      <div class="faq__search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="faqSearch" placeholder="Search: certificate, documents, payment…" aria-label="Search FAQs">
+        <button type="button" id="faqClear" class="faq__clear" hidden aria-label="Clear search">&times;</button>
+      </div>
+    </aside>
+
+    <div class="faq__list" id="faqList">
+      <details class="faq__item" open>
+        <summary>What is an RVSF?<span class="faq__icon"></span></summary>
+        <div class="faq__answer"><p>A Registered Vehicle Scrapping Facility is a government-authorised centre for dismantling end-of-life vehicles. Only an RVSF can issue a Certificate of Deposit.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary>How is my vehicle's scrap value calculated?<span class="faq__icon"></span></summary>
+        <div class="faq__answer"><p>It is based on vehicle type, kerb weight, and current scrap metal rates. The online figure is an estimate. The final value is confirmed after physical verification.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary>What documents do I need?<span class="faq__icon"></span></summary>
+        <div class="faq__answer"><p>Original RC, the owner's ID proof (Aadhaar or PAN), and bank details. If the vehicle is under loan, you need an NOC from the financier. If someone else is handing it over, you need an authorisation letter from the owner.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary>Will I receive a Certificate of Deposit?<span class="faq__icon"></span></summary>
+        <div class="faq__answer"><p>Yes. It is issued digitally once the vehicle is accepted at the facility. It is your legal proof of scrapping and can be used to claim applicable benefits on a new vehicle purchase, subject to your state's rules.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary>How long does the process take?<span class="faq__icon"></span></summary>
+        <div class="faq__answer"><p>Our team calls back within 24 hours. Pickup and certificate timelines vary by location; we confirm exact dates during the call.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary>When do I get paid?<span class="faq__icon"></span></summary>
+        <div class="faq__answer"><p>Payment is transferred to your bank account after verification at the facility. We confirm the timeline once documents are verified.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary>What if my vehicle doesn't run?<span class="faq__icon"></span></summary>
+        <div class="faq__answer"><p>It doesn't need to. We tow it.</p></div>
+      </details>
+    </div>
+
+    <p class="faq__empty" id="faqEmpty" hidden>No matching questions. <a href="#contact">Talk to an RVSF expert →</a></p>
+  </div>
+</section>
+
+<!-- ============ 10. CLOSING CTA ============ -->
+<section class="closing" id="closing-cta">
+  <div class="container">
+    <div class="closing__card">
+      <span class="closing__badge">Fast & obligation-free</span>
+      <h2 class="closing__title">Find out what your vehicle is worth.</h2>
+      <p class="closing__sub">It takes a minute and you are under no obligation to proceed.</p>
+      <div class="closing__actions">
+        <a href="#calculator" class="btn btn--cta btn--lg">Get My Scrap Value</a>
+        <a href="#contact" class="btn btn--outline btn--lg">Request Call Back</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11. CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="container contact__grid">
+    <aside class="contact__intro">
+      <span class="eyebrow">Talk to us</span>
+      <h2 class="section-title">Prefer to speak to someone?</h2>
+      <p class="contact__sub">Leave your number. Our team calls back within 24 hours.</p>
+
+      <ul class="contact__perks">
+        <li>
+          <span class="perk__icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <div><strong>Direct RVSF coordinator</strong><span>No pushy telecallers. Talk directly to licensed facility staff.</span></div>
+        </li>
+        <li>
+          <span class="perk__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+          <div><strong>Documentation assistance</strong><span>Help with lost RC, bank NOC, hypothecation clearance, and state transfer.</span></div>
+        </li>
+        <li>
+          <span class="perk__icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+          <div><strong>Email us directly</strong><span><a href="mailto:contactrvsf@mplgroup.in">contactrvsf@mplgroup.in</a></span></div>
+        </li>
+      </ul>
+    </aside>
+
+    <div class="contact__form-wrap">
+      <div class="contact__card">
+        <h3 class="contact__card-title">Request a Call Back</h3>
+        <p class="contact__card-sub">Guaranteed response within 24 hours.</p>
+
+        <form id="contactForm" novalidate>
+          <div class="field">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Your name" required>
+            <span class="field__error" id="fullNameError">Please enter your name.</span>
+          </div>
+          <div class="field">
+            <label for="phone">Phone Number</label>
+            <div class="phone">
+              <span class="phone__prefix">+91</span>
+              <input type="tel" id="phone" name="phone" placeholder="10-digit mobile" maxlength="10" inputmode="numeric" required>
+            </div>
+            <span class="field__error" id="phoneError">Enter a valid 10-digit Indian mobile number.</span>
+          </div>
+          <div class="field">
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" placeholder="Your city" required>
+            <span class="field__error" id="cityError">Please enter your city.</span>
+          </div>
+          <div class="field">
+            <label for="notes">Vehicle details (optional)</label>
+            <input type="text" id="notes" name="notes" placeholder="e.g. 2008 Honda City, running condition">
+          </div>
+          <input type="text" id="honeypot" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
+          <button type="submit" class="btn btn--cta btn--block" id="contactSubmit">
+            Get a Call Back
+            <svg class="btn__arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <p class="contact__privacy">Your details are used only to contact you about your vehicle.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <img src="assets/logo.png" alt="Scrapkar" class="footer__logo">
+      <p>Scrapkar operates through Registered Vehicle Scrapping Facilities (RVSFs) authorised under the Ministry of Road Transport and Highways. We recycle end-of-life vehicles safely, legally, and sustainably.</p>
+      <span class="footer__pill">Official RVSF Network</span>
+    </div>
+
+    <div class="footer__col">
+      <h4>Vehicles</h4>
+      <a href="#vehicles">Cars & SUVs</a>
+      <a href="#vehicles">Two Wheelers</a>
+      <a href="#vehicles">Three Wheelers</a>
+      <a href="#vehicles">Commercial Trucks</a>
+      <a href="#vehicles">Electric Vehicles</a>
+      <a href="#vehicles">Fleet & Bulk</a>
+    </div>
+
+    <div class="footer__col">
+      <h4>Company</h4>
+      <a href="#why">Why Scrapkar</a>
+      <a href="#recycle">Scrap to Recycle</a>
+      <a href="#network">Network Hubs</a>
+      <a href="#process">How It Works</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQs</a>
+    </div>
+
+    <div class="footer__col">
+      <h4>Contact</h4>
+      <a href="mailto:contactrvsf@mplgroup.in">contactrvsf@mplgroup.in</a>
+      <span class="footer__text">Mon – Sat: 9:00 AM – 7:00 PM</span>
+      <span class="footer__text">Facilities: MH · DL-NCR · KA · TN · TS · GJ · UP · HR · RJ</span>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <p>&copy; <span id="year">2026</span> Scrapkar. All rights reserved.</p>
+    <div class="footer__legal">
+      <a href="#faq">Terms</a><span>·</span><a href="#faq">Privacy</a><span>·</span><a href="#network">RVSF Compliance</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MODAL ============ -->
+<div class="modal" id="valuationModal" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__dialog">
+    <button class="modal__close" data-close aria-label="Close">&times;</button>
+    <span class="modal__badge">Estimated Valuation</span>
+    <h3 class="modal__title">Your Scrap Value Breakdown</h3>
+    <p class="modal__sub" id="modalSummary">Vehicle summary</p>
+
+    <div class="modal__highlight">
+      <span class="modal__label">Estimated Net Scrap Value</span>
+      <p class="modal__amount" id="modalRange">₹0 – ₹0</p>
+      <span class="modal__note">Includes steel weight, cast metals & catalytic group metals.</span>
+    </div>
+
+    <ul class="modal__breakdown">
+      <li><span>Base metal & steel value</span><strong id="modalMetal">₹0</strong></li>
+      <li><span>Recoverable components & alloys</span><strong id="modalComponent">₹0</strong></li>
+      <li class="green"><span>New vehicle road tax concession (COD)</span><strong id="modalTax">Up to 25%</strong></li>
+      <li class="green"><span>Doorstep towing & de-registration</span><strong>FREE</strong></li>
+    </ul>
+
+    <p class="modal__notice">Final value is confirmed after physical inspection of vehicle weight and component completeness at the RVSF.</p>
+
+    <a href="#contact" class="btn btn--cta btn--block" data-close id="modalAction">Proceed to Schedule Pickup</a>
+    <button class="btn btn--ghost btn--block" data-close data-recalc>Recalculate Another Vehicle</button>
+  </div>
+</div>
+
+<!-- ============ TOAST ============ -->
+<div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+<!-- ============ STICKY MOBILE CTA ============ -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="#calculator" class="btn btn--cta btn--sm">Get Scrap Value</a>
+  <a href="#contact" class="btn btn--ghost btn--sm">Talk to Us</a>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
