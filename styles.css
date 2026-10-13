@@ -140,7 +140,7 @@ details summary::-webkit-details-marker { display: none; }
 }
 .header__inner { height: 100%; display: flex; align-items: center; justify-content: space-between; }
 .brand { display: flex; align-items: center; }
-.brand__logo { height: 44px; width: auto; }
+.brand__logo { height: 40px; width: auto; }
 .nav { display: flex; align-items: center; gap: 2rem; }
 .nav__link {
   font-size: 0.875rem; font-weight: 500;
@@ -267,7 +267,7 @@ details summary::-webkit-details-marker { display: none; }
 .why__body p { font-size: 0.9375rem; color: var(--ink-3); max-width: 540px; }
 
 /* ==========================================================================
-   3. STATS
+   3. STATS — Always 4 in one row, 75+ stays on one line
    ========================================================================== */
 .stats {
   background: var(--navy); color: var(--white);
@@ -280,23 +280,54 @@ details summary::-webkit-details-marker { display: none; }
   letter-spacing: 0.02em; color: var(--white);
   margin-bottom: 2.75rem; text-transform: uppercase;
 }
-.stats__row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.stats__row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);   /* ← always 4 columns */
+  gap: 0;
+  align-items: stretch;
+}
 .stat {
-  text-align: center; padding: 1.25rem 1rem;
+  text-align: center;
+  padding: 1.25rem 0.5rem;
   border-right: 1px solid rgba(255,255,255,0.08);
-  display: flex; flex-direction: column; align-items: center;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  min-width: 0;
 }
 .stat:last-child { border-right: none; }
-.stat__num, .stat__suffix {
-  display: inline; font-size: clamp(2.25rem, 4.5vw, 3.25rem);
-  font-weight: 900; line-height: 1; letter-spacing: -0.035em; color: var(--white);
+
+/* Wrapper — keeps num + suffix glued on one line */
+.stat__value {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  white-space: nowrap;
+  line-height: 1;
+  gap: 0;
 }
-.stat__suffix { color: var(--green); margin-left: 0.1rem; }
+.stat__num,
+.stat__suffix {
+  display: inline;
+  font-size: clamp(1.75rem, 4.5vw, 3.25rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  color: var(--white);
+  white-space: nowrap;
+}
+.stat__suffix { color: var(--green); margin-left: 0.05rem; }
 .stat__label {
-  display: block; margin-top: 0.6rem;
-  font-size: 0.75rem; font-weight: 700;
-  letter-spacing: 0.14em; text-transform: uppercase;
+  display: block; margin-top: 0.5rem;
+  font-size: clamp(0.5625rem, 1.5vw, 0.75rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: rgba(255,255,255,0.6);
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 /* ==========================================================================
@@ -362,8 +393,7 @@ details summary::-webkit-details-marker { display: none; }
 }
 .recycle__canvas {
   position: relative;
-  width: 100%;
-  max-width: 780px;
+  width: 100%; max-width: 780px;
   margin: 0 auto;
   border-radius: var(--r-lg);
   overflow: visible;
@@ -455,7 +485,7 @@ details summary::-webkit-details-marker { display: none; }
 .recycle__closing strong { color: var(--green); font-weight: 800; }
 
 /* ==========================================================================
-   6. NETWORK — LIGHT section, DARK cards
+   6. NETWORK — LIGHT section, DARK cards, NO shrink on hover
    ========================================================================== */
 .network--light {
   padding: 6rem 0;
@@ -477,7 +507,7 @@ details summary::-webkit-details-marker { display: none; }
   box-shadow: 0 30px 70px rgba(13,21,38,0.35);
   position: relative;
   display: flex; flex-direction: column; justify-content: center;
-  min-height: 560px;
+  min-height: 620px;   /* ← fixed so it doesn't shrink */
 }
 .network__select {
   display: none; width: 100%; padding: 0.8rem 1rem;
@@ -528,6 +558,7 @@ details summary::-webkit-details-marker { display: none; }
   display: flex; flex-direction: column; justify-content: space-between;
   transition: opacity var(--t), transform var(--t);
   color: var(--white);
+  min-height: 620px;   /* ← matches map so no shrink on hover */
 }
 .facility__head { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
 .facility__state {
@@ -620,7 +651,7 @@ details summary::-webkit-details-marker { display: none; }
 .step p { font-size: 0.9rem; color: var(--ink-3); line-height: 1.65; }
 
 /* ==========================================================================
-   8. REVIEWS — Wide, Left-aligned, 90% container width
+   8. REVIEWS
    ========================================================================== */
 .reviews {
   position: relative;
@@ -659,7 +690,6 @@ details summary::-webkit-details-marker { display: none; }
 }
 .reviews__head { max-width: 720px; margin-bottom: 3.5rem; }
 
-/* Testimonial wrapper — 90% width, aligned with heading (left) */
 .testimonial {
   position: relative;
   display: grid;
@@ -668,7 +698,7 @@ details summary::-webkit-details-marker { display: none; }
   gap: 1.5rem;
   width: 90%;
   max-width: 90%;
-  margin: 0;                       /* left-aligned, not centered */
+  margin: 0;
 }
 .testimonial__viewport {
   overflow: hidden;
@@ -775,7 +805,7 @@ details summary::-webkit-details-marker { display: none; }
   display: flex; gap: 0.6rem;
   margin-top: 2.5rem;
   width: 90%;
-  padding-left: 68px;    /* aligns under the card, past the prev arrow */
+  padding-left: 68px;
 }
 .testimonial__dot {
   width: 10px; height: 10px; border-radius: 50%;
@@ -788,13 +818,6 @@ details summary::-webkit-details-marker { display: none; }
   background: var(--green);
   width: 34px; border-radius: var(--r-full);
   box-shadow: 0 0 18px rgba(112,177,49,0.7);
-}
-.reviews__note {
-  text-align: left;
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.45);
-  margin-top: 1.5rem;
-  width: 90%;
 }
 
 /* ==========================================================================
@@ -1019,15 +1042,15 @@ details summary::-webkit-details-marker { display: none; }
   .hero__copy { max-width: 680px; }
   .why__grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .why__intro { position: static; }
-  .stats__row { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-  .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 1.5rem; }
-  .stat:nth-last-child(-n+2) { border-bottom: none; padding-bottom: 0; }
+
+  /* ← DELETE the 2x2 stats grid, keep 4 in one row */
 
   .recycle__stage { grid-template-columns: 1fr; gap: 2.5rem; }
   .recycle__canvas { max-width: 100%; }
 
   .network__grid { grid-template-columns: 1fr; }
   .network__map-wrap { min-height: auto; }
+  .facility { min-height: auto; }
 
   .process__steps { grid-template-columns: repeat(2, 1fr); }
 
@@ -1041,16 +1064,19 @@ details summary::-webkit-details-marker { display: none; }
   .testimonial__slide { padding: 2.25rem 2rem 1.75rem; }
   .testimonial__slide blockquote { font-size: 1.0625rem; }
   .testimonial__dots { width: 100%; padding-left: 62px; }
-  .reviews__note { width: 100%; }
 }
 
 @media (max-width: 768px) {
   .container { padding: 0 1.25rem; }
-  .site-header { height: 64px; }
-  :root { --header-h: 64px; }
+  .site-header { height: 56px; }
+  :root { --header-h: 56px; }
+
+  /* Smaller logo on mobile */
+  .brand__logo { height: 28px; }
+  .footer__logo { height: 32px; }
 
   .nav {
-    position: fixed; top: 64px; left: 0; right: 0;
+    position: fixed; top: 56px; left: 0; right: 0;
     flex-direction: column; align-items: flex-start; gap: 0;
     background: var(--navy); padding: 1.5rem 1.25rem 2rem;
     border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -1073,7 +1099,16 @@ details summary::-webkit-details-marker { display: none; }
 
   .why, .vehicles, .recycle, .network--light, .process, .reviews, .faq, .contact { padding: 4rem 0; }
   .section-title { font-size: 1.75rem; }
-  .stats__headline { font-size: 1rem; }
+
+  /* Remove "Get my scrap value" link on mobile */
+  .why .link-arrow { display: none; }
+
+  /* Stats — tighter spacing, 4 in one row */
+  .stats { padding: 3rem 0; }
+  .stats__headline { font-size: 0.875rem; margin-bottom: 2rem; padding: 0 0.5rem; letter-spacing: 0.04em; }
+  .stat { padding: 1rem 0.3rem; }
+  .stat__num, .stat__suffix { font-size: clamp(1.35rem, 5.5vw, 2rem); }
+  .stat__label { font-size: clamp(0.5rem, 2vw, 0.625rem); letter-spacing: 0.03em; margin-top: 0.4rem; }
 
   .vrow { grid-template-columns: 1fr; gap: 0.75rem; padding: 1.5rem 0; }
   .vrow__num { display: none; }
@@ -1083,7 +1118,7 @@ details summary::-webkit-details-marker { display: none; }
 
   .recycle__panel { padding: 1.5rem 1.25rem; }
   .recycle__title { font-size: 1.375rem; }
-  .hotspot { width: 28px; height: 28px; font-size: 0.65rem; }
+  .hotspot { width: 26px; height: 26px; font-size: 0.6rem; }
 
   .network__select { display: block; }
   .network__mobile-label { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem; }
@@ -1093,17 +1128,49 @@ details summary::-webkit-details-marker { display: none; }
   .process__steps { grid-template-columns: 1fr; gap: 1.25rem; }
   .step { padding: 1.75rem 1.5rem 1.5rem; }
 
-  .testimonial { grid-template-columns: 1fr; gap: 1rem; width: 100%; max-width: 100%; }
-  .testimonial__nav { width: 46px; height: 46px; }
-  .testimonial__nav--prev { justify-self: start; }
-  .testimonial__nav--next { justify-self: end; grid-row: 2; }
-  .testimonial__viewport { order: -1; border-radius: var(--r-lg); }
-  .testimonial__track { min-height: 400px; }
-  .testimonial__slide { padding: 2rem 1.5rem 1.75rem; border-radius: var(--r-lg); }
-  .testimonial__slide blockquote { font-size: 1rem; }
-  .testimonial__quote-mark { font-size: 3.25rem; }
-  .testimonial__dots { padding-left: 0; width: 100%; justify-content: center; }
-  .reviews__note { width: 100%; text-align: center; }
+  /* Testimonial — clean vertical stack, arrows below card */
+  .testimonial {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 1.25rem;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+  .testimonial__viewport {
+    grid-row: 1;
+    grid-column: 1;
+    order: 0;
+    border-radius: var(--r-lg);
+    width: 100%;
+  }
+  .testimonial__nav {
+    width: 46px; height: 46px;
+    grid-row: 2;
+  }
+  .testimonial__nav--prev {
+    grid-column: 1;
+    justify-self: start;
+  }
+  .testimonial__nav--next {
+    grid-column: 1;
+    justify-self: end;
+  }
+  .testimonial__track { min-height: 380px; }
+  .testimonial__slide {
+    padding: 2rem 1.5rem 1.75rem;
+    border-radius: var(--r-lg);
+  }
+  .testimonial__slide blockquote { font-size: 0.9375rem; }
+  .testimonial__quote-mark { font-size: 3rem; margin-bottom: 0.5rem; }
+
+  /* Dots centered below the whole block */
+  .testimonial__dots {
+    width: 100%;
+    padding-left: 0;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
 
   .faq__item summary { font-size: 0.9375rem; padding: 1.15rem 0; }
 
@@ -1112,6 +1179,7 @@ details summary::-webkit-details-marker { display: none; }
   .closing__actions .btn { width: 100%; }
   .contact__card { padding: 1.75rem 1.35rem; }
 
+  .footer { padding: 3.5rem 0 1.5rem; }
   .footer__grid { grid-template-columns: 1fr; gap: 2rem; }
   .footer__bottom { flex-direction: column; align-items: flex-start; }
 
@@ -1124,16 +1192,23 @@ details summary::-webkit-details-marker { display: none; }
 
 @media (max-width: 480px) {
   .hero__title { font-size: 2.15rem; }
-  .stat__num, .stat__suffix { font-size: 2rem; }
+
+  /* Stats — even tighter so 4 fit */
+  .stats { padding: 2.5rem 0; }
+  .stats__headline { font-size: 0.75rem; margin-bottom: 1.5rem; letter-spacing: 0.06em; }
+  .stat { padding: 0.75rem 0.2rem; }
+  .stat__num, .stat__suffix { font-size: clamp(1.1rem, 6vw, 1.625rem); }
+  .stat__label { font-size: clamp(0.4375rem, 2.3vw, 0.5625rem); letter-spacing: 0.02em; }
+
   .modal__dialog { padding: 2rem 1.25rem; }
   .modal__amount { font-size: 1.75rem; }
 
-  .testimonial__track { min-height: 460px; }
+  .testimonial__track { min-height: 440px; }
   .testimonial__slide { padding: 1.75rem 1.25rem; }
   .testimonial__slide blockquote { font-size: 0.9375rem; }
-  .testimonial__quote-mark { font-size: 2.75rem; }
+  .testimonial__quote-mark { font-size: 2.5rem; }
   .testimonial__avatar { width: 44px; height: 44px; font-size: 0.8125rem; }
   .testimonial__meta strong { font-size: 0.9375rem; }
 
-  .hotspot { width: 26px; height: 26px; font-size: 0.6rem; }
+  .hotspot { width: 24px; height: 24px; font-size: 0.55rem; }
 }

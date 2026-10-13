@@ -3,9 +3,7 @@
 
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwIALpqkLwKScGDvDBuh1H70CafQs1PeKpSOK1TKvm49__sQrSB7YdtPKPRXRBKBAAG/exec';
 
-/* ------------------------------------------------------------------
-   RECYCLE DATA
-   ------------------------------------------------------------------ */
+
 const PARTS = {
   body:       { num: 1,  category: 'Core Structure',        name: 'Body Shell & Chassis',       becomes: 'Construction steel, new vehicle panels',          desc: "Most of your car's weight is steel. It is shredded, melted, and rolled again into TMT bars, sheet metal, and new car bodies. Steel can be recycled repeatedly without losing strength." },
   engine:     { num: 2,  category: 'Powertrain',            name: 'Engine Block & Castings',    becomes: 'New engine parts, pump housings, industrial castings', desc: 'Cast iron and aluminium are separated and remelted. An engine that no longer runs still holds its full metal value. Certified destruction means it cannot be refitted into another vehicle.' },
@@ -23,9 +21,8 @@ const PARTS = {
   ecu:        { num: 14, category: 'Micro-Electronics',     name: 'ECU & Electronics',          becomes: 'Recovered gold, silver, copper',                   desc: 'Circuit boards go to authorised e-waste recyclers for metal recovery.' }
 };
 
-/* ------------------------------------------------------------------
-   NETWORK DATA
-   ------------------------------------------------------------------ */
+  //  NETWORK DATA
+
 const NETWORK = {
   MH: { state:'Maharashtra', title:'Western Region Scrapping Facilities', partners:[
     { name:'Mahindra Cero RVSF Processing Unit', reg:'RVSF/MH/2022/001', loc:'MIDC Chakan Industrial Zone, Pune, Maharashtra', cap:'Automated Depollution & Heavy Shredding' },
