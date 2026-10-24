@@ -140,7 +140,7 @@ details summary::-webkit-details-marker { display: none; }
 }
 .header__inner { height: 100%; display: flex; align-items: center; justify-content: space-between; }
 .brand { display: flex; align-items: center; }
-.brand__logo { height: 40px; width: auto; }
+.brand__logo { height: 54px; width: auto; }
 .nav { display: flex; align-items: center; gap: 2rem; }
 .nav__link {
   font-size: 0.875rem; font-weight: 500;
@@ -535,7 +535,6 @@ details summary::-webkit-details-marker { display: none; }
 .hub:hover .hub__label,
 .hub.is-active .hub__label { fill: var(--green); }
 
-/* --- White facility card --- */
 /* --- Dark facility card --- */
 .facility {
   background: linear-gradient(160deg, #1a2844 0%, #0d1526 100%);
@@ -829,7 +828,7 @@ details summary::-webkit-details-marker { display: none; }
    ========================================================================== */
 .footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4.5rem 0 2rem; border-top: 1px solid rgba(255,255,255,0.06); }
 .footer__grid { display: grid; grid-template-columns: 1.4fr 0.75fr 0.75fr 1fr; gap: 3rem; margin-bottom: 3rem; }
-.footer__logo { height: 40px; width: auto; margin-bottom: 1.25rem; }
+.footer__logo { height: 54px; width: auto; margin-bottom: 1.25rem; }
 .footer__brand p { font-size: 0.875rem; line-height: 1.7; max-width: 380px; margin-bottom: 1.25rem; }
 .footer__pill {
   display: inline-block; font-size: 0.6875rem; font-weight: 700;
@@ -915,19 +914,6 @@ details summary::-webkit-details-marker { display: none; }
 @keyframes toastIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
 /* ==========================================================================
-   STICKY MOBILE CTA
-   ========================================================================== */
-.sticky-cta {
-  display: none; position: fixed; bottom: 0; left: 0; right: 0;
-  background: rgba(13,21,38,0.96);
-  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding: 0.75rem 1rem; z-index: 90; gap: 0.65rem;
-}
-.sticky-cta .btn { flex: 1; }
-.sticky-cta .btn--ghost { color: var(--white); border-color: rgba(255,255,255,0.25); }
-
-/* ==========================================================================
    RESPONSIVE
    ========================================================================== */
 @media (max-width: 1024px) {
@@ -958,8 +944,8 @@ details summary::-webkit-details-marker { display: none; }
   .site-header { height: 56px; }
   :root { --header-h: 56px; }
 
-  .brand__logo { height: 28px; }
-  .footer__logo { height: 32px; }
+  .brand__logo { height: 38px; }
+  .footer__logo { height: 42px; }
 
   .nav {
     position: fixed; top: 56px; left: 0; right: 0;
@@ -1024,11 +1010,8 @@ details summary::-webkit-details-marker { display: none; }
   .footer__grid { grid-template-columns: 1fr; gap: 2rem; }
   .footer__bottom { flex-direction: column; align-items: flex-start; }
 
-  .toast-stack { left: 1rem; right: 1rem; bottom: 5rem; }
+  .toast-stack { left: 1rem; right: 1rem; bottom: 1.5rem; }
   .toast { max-width: none; }
-
-  .sticky-cta { display: flex; }
-  body { padding-bottom: 66px; }
 }
 
 @media (max-width: 480px) {

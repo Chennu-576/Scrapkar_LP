@@ -55,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initFAQ();
   initContactForm();
   initModal();
-  initStickyCta();
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 });
@@ -436,20 +435,6 @@ function openModal({ summary, range, metal, component, tax }) {
 function closeModal() {
   document.getElementById('valuationModal').classList.remove('is-open');
   document.body.style.overflow = '';
-}
-
-/* STICKY MOBILE CTA */
-function initStickyCta() {
-  const cta = document.getElementById('stickyCta');
-  const hero = document.getElementById('hero');
-  if (!cta || !hero) return;
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(en => {
-      if (en.isIntersecting || window.innerWidth > 768) cta.style.display = 'none';
-      else cta.style.display = 'flex';
-    });
-  }, { threshold: 0.05 });
-  obs.observe(hero);
 }
 
 /* TOAST */
