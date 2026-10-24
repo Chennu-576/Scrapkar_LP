@@ -6,7 +6,7 @@
 <title>Scrapkar — Old Car. New Steel. | Govt. Authorised RVSF</title>
 <meta name="description" content="Scrapkar retires your vehicle through a Registered Vehicle Scrapping Facility. Transparent valuation, doorstep pickup, and a Certificate of Deposit.">
 <meta name="theme-color" content="#0d1526">
-<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="icon" type="image/png" href="assets/scrapkar.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
 <header class="site-header" id="siteHeader">
   <div class="container header__inner">
     <a href="#top" class="brand" aria-label="Scrapkar Home">
-      <img src="assets/logo.png" alt="Scrapkar" class="brand__logo">
+      <img src="assets/scrapkar.png" alt="Scrapkar" class="brand__logo">
     </a>
     <nav class="nav" id="primaryNav" aria-label="Main navigation">
       <a href="#why" class="nav__link">Why Scrapkar</a>
@@ -313,30 +313,31 @@
     <header class="recycle__head">
       <span class="eyebrow eyebrow--green">Scrap to Recycle</span>
       <h2 class="section-title section-title--light">Nothing here is waste</h2>
-      <p class="section-sub section-sub--light">Hover a numbered hotspot on the vehicle — or tap a material below — to see where each part goes next.</p>
+      <p class="section-sub section-sub--light">Hover a dot on the vehicle to see where each part goes next.</p>
     </header>
 
     <div class="recycle__stage">
       <div class="recycle__canvas" id="recycleCanvas">
-        <img src="assets/exploded_car.png"
+        <img src="assets/updated_car.png"
              alt="Scrapkar exploded car showing 14 recyclable components"
              class="recycle__img"
              id="recycleImg">
 
-        <button class="hotspot" data-part="body"       style="top:42%; left:82%;" aria-label="1 — Body Shell and Chassis"><span>1</span></button>
-        <button class="hotspot" data-part="engine"     style="top:72%; left:14%;" aria-label="2 — Engine Block and Castings"><span>2</span></button>
-        <button class="hotspot" data-part="wheels"     style="top:48%; left:5%;"  aria-label="3 — Alloy Wheels"><span>3</span></button>
-        <button class="hotspot" data-part="tyres"      style="top:40%; left:25%;" aria-label="4 — Tyres"><span>4</span></button>
-        <button class="hotspot" data-part="battery"    style="top:56%; left:57%;" aria-label="5 — Battery"><span>5</span></button>
-        <button class="hotspot" data-part="ev_battery" style="top:55%; left:72%;" aria-label="6 — EV Battery Pack"><span>6</span></button>
-        <button class="hotspot" data-part="catalytic"  style="top:74%; left:54%;" aria-label="7 — Catalytic Converter"><span>7</span></button>
-        <button class="hotspot" data-part="glass"      style="top:22%; left:30%;" aria-label="8 — Windscreen and Glass"><span>8</span></button>
-        <button class="hotspot" data-part="wiring"     style="top:34%; left:64%;" aria-label="9 — Wiring Harness"><span>9</span></button>
-        <button class="hotspot" data-part="plastics"   style="top:24%; left:46%;" aria-label="10 — Bumpers, Dashboard and Trims"><span>10</span></button>
-        <button class="hotspot" data-part="seats"      style="top:32%; left:52%;" aria-label="11 — Seats and Upholstery"><span>11</span></button>
-        <button class="hotspot" data-part="radiator"   style="top:78%; left:42%;" aria-label="12 — Radiator and AC Unit"><span>12</span></button>
-        <button class="hotspot" data-part="fluids"     style="top:82%; left:22%;" aria-label="13 — Engine Oil and Fluids"><span>13</span></button>
-        <button class="hotspot" data-part="ecu"        style="top:35%; left:74%;" aria-label="14 — ECU and Electronics"><span>14</span></button>
+        <!-- 14 Hotspots accurately mapped to the exploded car image -->
+        <button class="hotspot" data-part="body"       style="top:25%; left:40%;" aria-label="Body Shell and Chassis"></button>
+        <button class="hotspot" data-part="engine"     style="top:60%; left:30%;" aria-label="Engine Block and Castings"></button>
+        <button class="hotspot" data-part="wheels"     style="top:55%; left:23%;" aria-label="Alloy Wheels"></button>
+        <button class="hotspot" data-part="tyres"      style="top:64%; left:16%;" aria-label="Tyres"></button>
+        <button class="hotspot" data-part="battery"    style="top:40%; left:90%;" aria-label="Battery"></button>
+        <button class="hotspot" data-part="ev_battery" style="top:58%; left:68%;" aria-label="EV Battery Pack"></button>
+        <button class="hotspot" data-part="catalytic"  style="top:65%; left:60%;" aria-label="Catalytic Converter"></button>
+        <button class="hotspot" data-part="glass"      style="top:32%; left:25%;" aria-label="Windscreen and Glass"></button>
+        <button class="hotspot" data-part="wiring"     style="top:39%; left:67%;" aria-label="Wiring Harness"></button>
+        <button class="hotspot" data-part="plastics"   style="top:35%; left:45%;" aria-label="Bumpers, Dashboard and Trims"></button>
+        <button class="hotspot" data-part="seats"      style="top:35%; left:57%;" aria-label="Seats and Upholstery"></button>
+        <button class="hotspot" data-part="radiator"   style="top:70%; left:40%;" aria-label="Radiator and AC Unit"></button>
+        <button class="hotspot" data-part="fluids"     style="top:68%; left:35%;" aria-label="Engine Oil and Fluids"></button>
+        <button class="hotspot" data-part="ecu"        style="top:38%; left:78%;" aria-label="ECU and Electronics"></button>
       </div>
 
       <aside class="recycle__panel" id="recyclePanel">
@@ -351,23 +352,6 @@
       </aside>
     </div>
 
-    <div class="recycle__pills" role="tablist" aria-label="Recycling streams">
-      <button class="pill is-active" data-part="body">1. Body Shell &amp; Chassis</button>
-      <button class="pill" data-part="engine">2. Engine Block &amp; Castings</button>
-      <button class="pill" data-part="wheels">3. Alloy Wheels</button>
-      <button class="pill" data-part="tyres">4. Tyres</button>
-      <button class="pill" data-part="battery">5. Battery</button>
-      <button class="pill" data-part="ev_battery">6. EV Battery Pack</button>
-      <button class="pill" data-part="catalytic">7. Catalytic Converter</button>
-      <button class="pill" data-part="glass">8. Windscreen &amp; Glass</button>
-      <button class="pill" data-part="wiring">9. Wiring Harness</button>
-      <button class="pill" data-part="plastics">10. Bumpers, Dashboard &amp; Trims</button>
-      <button class="pill" data-part="seats">11. Seats &amp; Upholstery</button>
-      <button class="pill" data-part="radiator">12. Radiator &amp; AC Unit</button>
-      <button class="pill" data-part="fluids">13. Engine Oil &amp; Fluids</button>
-      <button class="pill" data-part="ecu">14. ECU &amp; Electronics</button>
-    </div>
-
     <p class="recycle__closing">
       Your car goes in as one vehicle and comes out as <strong>fourteen streams of raw material.</strong>
     </p>
@@ -380,36 +364,28 @@
     <header class="network__head">
       <span class="eyebrow">Our Network</span>
       <h2 class="section-title">Scrapkar is closer than you think</h2>
-      <p class="section-sub">Authorised scrapping facilities and pickup partners across India. Hover a state to see the nearest verified facility.</p>
+      <p class="section-sub">Authorised scrapping facilities and pickup partners across India. Hover a city to see the nearest verified facility.</p>
     </header>
 
     <div class="network__grid">
       <div class="network__map-wrap">
-        <label class="network__mobile-label" for="stateSelect">Select your state</label>
+        <label class="network__mobile-label" for="stateSelect">Select your city</label>
         <select id="stateSelect" class="network__select">
-          <option value="MH">Maharashtra</option>
-          <option value="DL">Delhi-NCR</option>
-          <option value="KA">Karnataka</option>
-          <option value="TN">Tamil Nadu</option>
-          <option value="TS">Telangana</option>
-          <option value="GJ">Gujarat</option>
-          <option value="UP">Uttar Pradesh</option>
-          <option value="HR">Haryana</option>
-          <option value="RJ">Rajasthan</option>
+          <option value="HYD">Hyderabad</option>
+          <option value="BLR">Bangalore</option>
+          <option value="CHN">Chennai</option>
+          <option value="MUM">Mumbai</option>
+          <option value="PUN">Pune</option>
         </select>
 
         <svg class="network__map" viewBox="0 0 620 700" xmlns="http://www.w3.org/2000/svg" aria-label="India map of Scrapkar RVSF network hubs">
           <defs>
             <linearGradient id="stateGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%"  stop-color="#1c3a5c" stop-opacity="0.9"/>
-              <stop offset="100%" stop-color="#0f2438" stop-opacity="0.9"/>
-            </linearGradient>
-            <linearGradient id="stateActive" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%"  stop-color="#0080C5" stop-opacity="0.9"/>
-              <stop offset="100%" stop-color="#70B131" stop-opacity="0.75"/>
+              <stop offset="0%"  stop-color="#e2e8f0"/>
+              <stop offset="100%" stop-color="#cbd5e1"/>
             </linearGradient>
             <filter id="mapShadow" x="-20%" y="-20%" width="140%" height="140%">
-              <feDropShadow dx="0" dy="0" stdDeviation="14" flood-color="#0080C5" flood-opacity="0.35"/>
+              <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#94a3b8" flood-opacity="0.3"/>
             </filter>
           </defs>
 
@@ -430,37 +406,52 @@
                  L204 164 L218 156 L232 146 L244 130 L256 114 L262 94
                  L258 74 L264 54 L272 30 Z"/>
 
-            <path class="state" data-state="GJ" d="M104 306 L118 296 L130 280 L126 262 L118 244 L122 226 L136 214 L152 210 L160 224 L156 244 L146 268 L142 288 L134 308 L118 320 L106 318 Z"/>
-            <path class="state" data-state="RJ" d="M136 214 L152 210 L168 202 L178 186 L190 174 L204 164 L218 156 L232 146 L244 130 L256 114 L262 94 L252 128 L240 158 L226 186 L212 210 L198 232 L182 244 L164 244 L156 226 Z"/>
-            <path class="state" data-state="HR" d="M178 186 L190 174 L204 164 L212 178 L208 194 L196 200 L182 200 Z"/>
-            <path class="state" data-state="DL" d="M196 178 L208 176 L212 186 L204 192 L194 190 Z"/>
-            <path class="state" data-state="UP" d="M204 164 L218 156 L232 146 L244 152 L262 174 L268 196 L264 220 L252 240 L236 254 L216 252 L200 240 L192 220 L196 198 L200 180 Z"/>
-            <path class="state" data-state="MH" d="M136 314 L156 300 L180 300 L204 318 L222 344 L226 372 L214 396 L194 410 L170 412 L148 404 L134 384 L126 360 L128 336 Z"/>
-            <path class="state" data-state="TS" d="M204 320 L224 314 L244 320 L256 340 L252 364 L238 382 L220 386 L204 378 L196 358 L198 336 Z"/>
-            <path class="state" data-state="KA" d="M182 412 L206 412 L228 428 L240 452 L236 478 L220 498 L198 502 L180 492 L172 468 L174 442 Z"/>
-            <path class="state" data-state="TN" d="M198 504 L222 502 L242 520 L252 548 L248 578 L232 600 L210 606 L194 596 L188 570 L188 540 Z"/>
+            <path class="state" d="M104 306 L118 296 L130 280 L126 262 L118 244 L122 226 L136 214 L152 210 L160 224 L156 244 L146 268 L142 288 L134 308 L118 320 L106 318 Z"/>
+            <path class="state" d="M136 214 L152 210 L168 202 L178 186 L190 174 L204 164 L218 156 L232 146 L244 130 L256 114 L262 94 L252 128 L240 158 L226 186 L212 210 L198 232 L182 244 L164 244 L156 226 Z"/>
+            <path class="state" d="M178 186 L190 174 L204 164 L212 178 L208 194 L196 200 L182 200 Z"/>
+            <path class="state" d="M196 178 L208 176 L212 186 L204 192 L194 190 Z"/>
+            <path class="state" d="M204 164 L218 156 L232 146 L244 152 L262 174 L268 196 L264 220 L252 240 L236 254 L216 252 L200 240 L192 220 L196 198 L200 180 Z"/>
+            <path class="state" d="M136 314 L156 300 L180 300 L204 318 L222 344 L226 372 L214 396 L194 410 L170 412 L148 404 L134 384 L126 360 L128 336 Z"/>
+            <path class="state" d="M204 320 L224 314 L244 320 L256 340 L252 364 L238 382 L220 386 L204 378 L196 358 L198 336 Z"/>
+            <path class="state" d="M182 412 L206 412 L228 428 L240 452 L236 478 L220 498 L198 502 L180 492 L172 468 L174 442 Z"/>
+            <path class="state" d="M198 504 L222 502 L242 520 L252 548 L248 578 L232 600 L210 606 L194 596 L188 570 L188 540 Z"/>
           </g>
 
-          <g class="hub" data-state="GJ"><circle class="hub__pulse" cx="120" cy="298" r="16"/><circle class="hub__dot" cx="120" cy="298" r="7"/></g>
-          <g class="hub" data-state="RJ"><circle class="hub__pulse" cx="180" cy="220" r="16"/><circle class="hub__dot" cx="180" cy="220" r="7"/></g>
-          <g class="hub" data-state="HR"><circle class="hub__pulse" cx="200" cy="188" r="16"/><circle class="hub__dot" cx="200" cy="188" r="7"/></g>
-          <g class="hub" data-state="DL"><circle class="hub__pulse" cx="204" cy="184" r="16"/><circle class="hub__dot" cx="204" cy="184" r="7"/></g>
-          <g class="hub" data-state="UP"><circle class="hub__pulse" cx="236" cy="196" r="16"/><circle class="hub__dot" cx="236" cy="196" r="7"/></g>
-          <g class="hub" data-state="MH"><circle class="hub__pulse" cx="182" cy="352" r="16"/><circle class="hub__dot" cx="182" cy="352" r="7"/></g>
-          <g class="hub" data-state="TS"><circle class="hub__pulse" cx="226" cy="352" r="16"/><circle class="hub__dot" cx="226" cy="352" r="7"/></g>
-          <g class="hub" data-state="KA"><circle class="hub__pulse" cx="204" cy="456" r="16"/><circle class="hub__dot" cx="204" cy="456" r="7"/></g>
-          <g class="hub" data-state="TN"><circle class="hub__pulse" cx="220" cy="552" r="16"/><circle class="hub__dot" cx="220" cy="552" r="7"/></g>
+          <!-- 5 city hubs -->
+          <g class="hub" data-state="MUM" tabindex="0">
+            <circle class="hub__pulse" cx="142" cy="350" r="16"/>
+            <circle class="hub__dot" cx="142" cy="350" r="7"/>
+            <text class="hub__label" x="126" y="354" text-anchor="end">Mumbai</text>
+          </g>
+          <g class="hub" data-state="PUN" tabindex="0">
+            <circle class="hub__pulse" cx="182" cy="378" r="16"/>
+            <circle class="hub__dot" cx="182" cy="378" r="7"/>
+            <text class="hub__label" x="198" y="382">Pune</text>
+          </g>
+          <g class="hub" data-state="HYD" tabindex="0">
+            <circle class="hub__pulse" cx="226" cy="352" r="16"/>
+            <circle class="hub__dot" cx="226" cy="352" r="7"/>
+            <text class="hub__label" x="242" y="356">Hyderabad</text>
+          </g>
+          <g class="hub" data-state="BLR" tabindex="0">
+            <circle class="hub__pulse" cx="204" cy="456" r="16"/>
+            <circle class="hub__dot" cx="204" cy="456" r="7"/>
+            <text class="hub__label" x="220" y="460">Bangalore</text>
+          </g>
+          <g class="hub" data-state="CHN" tabindex="0">
+            <circle class="hub__pulse" cx="220" cy="552" r="16"/>
+            <circle class="hub__dot" cx="220" cy="552" r="7"/>
+            <text class="hub__label" x="236" y="556">Chennai</text>
+          </g>
         </svg>
       </div>
 
       <aside class="facility" id="facilityCard">
         <div class="facility__head">
-          <span class="facility__state" id="facState">Maharashtra</span>
-          <span class="facility__status">Verified RVSF</span>
+          <h3 class="facility__city" id="facCity">Hyderabad</h3>
+          <span class="facility__badge" id="facBadge">Authorized Facility</span>
         </div>
-        <h3 class="facility__title" id="facTitle">Western Region Scrapping Facilities</h3>
         <div class="facility__list" id="facList"><!-- populated by JS --></div>
-        <a href="#contact" class="btn btn--cta btn--block facility__cta">Request Pickup in This State</a>
       </aside>
     </div>
   </div>
@@ -523,72 +514,57 @@
       <p class="section-sub section-sub--light">From people who have scrapped with us.</p>
     </header>
 
-    <div class="testimonial" id="testimonial" aria-live="polite">
-      <button class="testimonial__nav testimonial__nav--prev" id="tPrev" aria-label="Previous review">
-        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
+    <div class="reviews__grid">
 
-      <div class="testimonial__viewport">
-        <div class="testimonial__track" id="tTrack">
+      <figure class="review-card">
+        <span class="review-card__quote">&ldquo;</span>
+        <blockquote>The entire process was smooth. The value quoted on the calculator was honored without unnecessary deductions. The tow truck arrived right on time, and the official Certificate of Deposit arrived within 48 hours.</blockquote>
+        <figcaption>
+          <span class="review-card__avatar">AS</span>
+          <div class="review-card__meta">
+            <strong>Amit Sharma</strong>
+            <span>Pune, MH · Maruti WagonR (2007)</span>
+          </div>
+        </figcaption>
+      </figure>
 
-          <figure class="testimonial__slide is-active">
-            <span class="testimonial__quote-mark">“</span>
-            <blockquote>The entire process was smooth. The value quoted on the calculator was honored without unnecessary deductions. The tow truck arrived right on time, and the official Certificate of Deposit arrived within 48 hours.</blockquote>
-            <figcaption>
-              <span class="testimonial__avatar">AS</span>
-              <div class="testimonial__meta">
-                <strong>Amit Sharma</strong>
-                <span>Pune, MH · Maruti WagonR (2007)</span>
-              </div>
-            </figcaption>
-          </figure>
+      <figure class="review-card">
+        <span class="review-card__quote">&ldquo;</span>
+        <blockquote>With Delhi's 15-year petrol ban, we needed a fully legal scrapping service so there would be zero risk of vehicle misuse. Scrapkar matched the chassis on VAHAN and provided the legal de-registration receipt immediately.</blockquote>
+        <figcaption>
+          <span class="review-card__avatar">PP</span>
+          <div class="review-card__meta">
+            <strong>Priya Patel</strong>
+            <span>New Delhi, DL · Hyundai Santro (2008)</span>
+          </div>
+        </figcaption>
+      </figure>
 
-          <figure class="testimonial__slide">
-            <span class="testimonial__quote-mark">“</span>
-            <blockquote>With Delhi's 15-year petrol ban, we needed a fully legal scrapping service so there would be zero risk of vehicle misuse. Scrapkar matched the chassis on VAHAN and provided the legal de-registration receipt immediately.</blockquote>
-            <figcaption>
-              <span class="testimonial__avatar">PP</span>
-              <div class="testimonial__meta">
-                <strong>Priya Patel</strong>
-                <span>New Delhi, DL · Hyundai Santro (2008)</span>
-              </div>
-            </figcaption>
-          </figure>
+      <figure class="review-card">
+        <span class="review-card__quote">&ldquo;</span>
+        <blockquote>Retired our family Honda City after 16 loyal years. Certified destruction ensured the engine could never be misused. Used the Certificate of Deposit to get the road tax discount on my new car.</blockquote>
+        <figcaption>
+          <span class="review-card__avatar">RN</span>
+          <div class="review-card__meta">
+            <strong>Rajesh Nair</strong>
+            <span>Bengaluru, KA · Honda City (2006)</span>
+          </div>
+        </figcaption>
+      </figure>
 
-          <figure class="testimonial__slide">
-            <span class="testimonial__quote-mark">“</span>
-            <blockquote>Retired our family Honda City after 16 loyal years. Certified destruction ensured the engine could never be misused. Used the Certificate of Deposit to get the road tax discount on my new car.</blockquote>
-            <figcaption>
-              <span class="testimonial__avatar">RN</span>
-              <div class="testimonial__meta">
-                <strong>Rajesh Nair</strong>
-                <span>Bengaluru, KA · Honda City (2006)</span>
-              </div>
-            </figcaption>
-          </figure>
+      <figure class="review-card">
+        <span class="review-card__quote">&ldquo;</span>
+        <blockquote>We retired two commercial delivery vans. Scrapkar gave us one dedicated point of contact, consolidated the paperwork, and transferred funds directly to our company account within a day.</blockquote>
+        <figcaption>
+          <span class="review-card__avatar">SS</span>
+          <div class="review-card__meta">
+            <strong>Sunita Sen</strong>
+            <span>Kolkata, WB · Tata Ace Fleet (2009)</span>
+          </div>
+        </figcaption>
+      </figure>
 
-          <figure class="testimonial__slide">
-            <span class="testimonial__quote-mark">“</span>
-            <blockquote>We retired two commercial delivery vans. Scrapkar gave us one dedicated point of contact, consolidated the paperwork, and transferred funds directly to our company account within a day.</blockquote>
-            <figcaption>
-              <span class="testimonial__avatar">SS</span>
-              <div class="testimonial__meta">
-                <strong>Sunita Sen</strong>
-                <span>Kolkata, WB · Tata Ace Fleet (2009)</span>
-              </div>
-            </figcaption>
-          </figure>
-
-        </div>
-      </div>
-
-      <button class="testimonial__nav testimonial__nav--next" id="tNext" aria-label="Next review">
-        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
     </div>
-
-    <div class="testimonial__dots" id="tDots" role="tablist" aria-label="Review navigation"></div>
-
   </div>
 </section>
 
@@ -638,21 +614,6 @@
     </div>
 
     <p class="faq__empty" id="faqEmpty" hidden>No matching questions. <a href="#contact">Talk to an RVSF expert →</a></p>
-  </div>
-</section>
-
-<!--  CLOSING CTA  -->
-<section class="closing" id="closing-cta">
-  <div class="container">
-    <div class="closing__card">
-      <span class="closing__badge">Fast & obligation-free</span>
-      <h2 class="closing__title">Find out what your vehicle is worth</h2>
-      <p class="closing__sub">It takes a minute and you are under no obligation to proceed.</p>
-      <div class="closing__actions">
-        <a href="#calculator" class="btn btn--cta btn--lg">Get My Scrap Value</a>
-        <a href="#contact" class="btn btn--outline btn--lg">Request Call Back</a>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -726,7 +687,7 @@
 <footer class="footer">
   <div class="container footer__grid">
     <div class="footer__brand">
-      <img src="assets/logo.png" alt="Scrapkar" class="footer__logo">
+      <img src="assets/scrapkar.png" alt="Scrapkar" class="footer__logo">
       <p>Scrapkar operates through Registered Vehicle Scrapping Facilities (RVSFs) authorised under the Ministry of Road Transport and Highways. We recycle end-of-life vehicles safely, legally, and sustainably.</p>
       <span class="footer__pill">Official RVSF Network</span>
     </div>
@@ -755,7 +716,7 @@
       <h4>Contact</h4>
       <a href="mailto:contactrvsf@mplgroup.in">contactrvsf@mplgroup.in</a>
       <span class="footer__text">Mon – Sat: 9:00 AM – 7:00 PM</span>
-      <span class="footer__text">Facilities: MH · DL-NCR · KA · TN · TS · GJ · UP · HR · RJ</span>
+      <span class="footer__text">Facilities: Mumbai · Pune · Hyderabad · Bangalore · Chennai</span>
     </div>
   </div>
   <div class="container footer__bottom">

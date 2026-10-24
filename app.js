@@ -1,8 +1,6 @@
-
 'use strict';
 
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwIALpqkLwKScGDvDBuh1H70CafQs1PeKpSOK1TKvm49__sQrSB7YdtPKPRXRBKBAAG/exec';
-
 
 const PARTS = {
   body:       { num: 1,  category: 'Core Structure',        name: 'Body Shell & Chassis',       becomes: 'Construction steel, new vehicle panels',          desc: "Most of your car's weight is steel. It is shredded, melted, and rolled again into TMT bars, sheet metal, and new car bodies. Steel can be recycled repeatedly without losing strength." },
@@ -21,46 +19,26 @@ const PARTS = {
   ecu:        { num: 14, category: 'Micro-Electronics',     name: 'ECU & Electronics',          becomes: 'Recovered gold, silver, copper',                   desc: 'Circuit boards go to authorised e-waste recyclers for metal recovery.' }
 };
 
-  //  NETWORK DATA
-
+/*  NETWORK DATA — 5 city hubs, facility names kept from existing data  */
 const NETWORK = {
-  MH: { state:'Maharashtra', title:'Western Region Scrapping Facilities', partners:[
-    { name:'Mahindra Cero RVSF Processing Unit', reg:'RVSF/MH/2022/001', loc:'MIDC Chakan Industrial Zone, Pune, Maharashtra', cap:'Automated Depollution & Heavy Shredding' },
-    { name:'MMR Vehicle Recycling Center', reg:'RVSF/MH/2023/004', loc:'Turbhe MIDC, Navi Mumbai, Maharashtra', cap:'Passenger Vehicle & 2-Wheeler Dismantling' },
-    { name:'Nagpur Vidarbha Clean Metals RVSF', reg:'RVSF/MH/2023/007', loc:'Butibori Industrial Area, Nagpur, Maharashtra', cap:'Commercial Vehicle & Fleet Recovery Hub' }
+  HYD: { city: 'Hyderabad', badge: 'Authorized Facility', partners: [
+    { name: 'Hyderabad EcoScrap RVSF',       loc: 'End-of-life vehicle treatment and documentation service, Medchal.' },
+    { name: 'Balanagar Automotive Recovery', loc: 'Passenger car and three-wheeler disposal node, Balanagar.' }
   ]},
-  DL: { state:'Delhi-NCR', title:'Capital Region Scrapping Facilities', partners:[
-    { name:'Maruti Suzuki Toyotsu RVSF (MSTI)', reg:'RVSF/UP/2021/001', loc:'Sector 80, Phase II, Noida, Delhi-NCR', cap:'High-Capacity Shredding & Depollution Unit' },
-    { name:'Delhi SafeScrap RVSF Hub', reg:'RVSF/DL/2022/002', loc:'Okhla Industrial Area, Phase II, New Delhi', cap:'15-Year Petrol / 10-Year Diesel Legal Surrender' },
-    { name:'Gurugram Automotive Recovery', reg:'RVSF/HR/2022/005', loc:'IMT Manesar, Gurugram, Haryana', cap:'Battery Extraction & High-Purity Metal Recovery' }
+  BLR: { city: 'Bangalore', badge: 'Tech-Enabled Hub', partners: [
+    { name: 'Bengaluru CleanDrive RVSF',     loc: 'Government authorized RVSF with digital certificate generation, Doddaballapur.' },
+    { name: 'Peenya Auto Recycling Node',    loc: 'Commercial fleet and two-wheeler processing, Peenya Industrial Estate.' }
   ]},
-  KA: { state:'Karnataka', title:'Southern Region Scrapping Facilities', partners:[
-    { name:'Bengaluru CleanDrive RVSF', reg:'RVSF/KA/2023/001', loc:'Doddaballapur Industrial Area, Bengaluru', cap:'Digital VAHAN De-Registration & Instant COD' },
-    { name:'Peenya Auto Recycling Node', reg:'RVSF/KA/2023/003', loc:'Peenya Industrial Estate, Bengaluru', cap:'Commercial Fleet & Two-Wheeler Processing' }
+  CHN: { city: 'Chennai', badge: 'South India Super Hub', partners: [
+    { name: 'Chennai Eco-Dismantling RVSF',  loc: 'Port-connected high-efficiency recycling facility, Sriperumbudur.' },
+    { name: 'Coimbatore Shredders RVSF',     loc: 'Engine and heavy casting processing plant, Eachanari.' }
   ]},
-  TN: { state:'Tamil Nadu', title:'Tamil Nadu Scrapping Facilities', partners:[
-    { name:'Chennai Eco-Dismantling RVSF', reg:'RVSF/TN/2023/001', loc:'Sriperumbudur Industrial Corridor, Chennai', cap:'Port-Connected Bulk Vehicle Shredding Facility' },
-    { name:'Coimbatore Shredders RVSF', reg:'RVSF/TN/2023/005', loc:'Eachanari Industrial Suburb, Coimbatore', cap:'Heavy Casting & Alloy Segregation Plant' }
+  MUM: { city: 'Mumbai', badge: 'Authorized Facility', partners: [
+    { name: 'MMR Vehicle Recycling Center',  loc: 'Passenger vehicle and two-wheeler dismantling, Turbhe MIDC, Navi Mumbai.' }
   ]},
-  TS: { state:'Telangana', title:'Hyderabad & Telangana Facilities', partners:[
-    { name:'Hyderabad EcoScrap RVSF', reg:'RVSF/TS/2023/001', loc:'Medchal Industrial Area, Hyderabad', cap:'Automated Fluid Drainage & Hydraulic Compacting' },
-    { name:'Balanagar Automotive Recovery Unit', reg:'RVSF/TS/2023/003', loc:'Balanagar Industrial Area, Hyderabad', cap:'Passenger Car & Three-Wheeler Disposal Node' }
-  ]},
-  GJ: { state:'Gujarat', title:'Gujarat Industrial Scrapping Hubs', partners:[
-    { name:'Sanand High-Tech Shredding RVSF', reg:'RVSF/GJ/2022/001', loc:'Sanand GIDC Automotive Corridor, Ahmedabad', cap:'100% Zero-Landfill Certified Shredding Plant' },
-    { name:'Surat Eco-Metals Recycling Facility', reg:'RVSF/GJ/2023/004', loc:'Hazira Industrial Belt, Surat', cap:'Heavy Commercial & Industrial Fleet Scrapping' }
-  ]},
-  UP: { state:'Uttar Pradesh', title:'Uttar Pradesh RVSF Facilities', partners:[
-    { name:'Lucknow Smart Recycle RVSF', reg:'RVSF/UP/2022/003', loc:'Chinhat Industrial Area, Lucknow', cap:'State Capital End-of-Life Vehicle Center' },
-    { name:'Sahibabad Bulk Vehicle Scrap Hub', reg:'RVSF/UP/2023/008', loc:'Sahibabad Industrial Area, Ghaziabad', cap:'Commercial Bus, Truck & LCV Retirement Facility' }
-  ]},
-  HR: { state:'Haryana', title:'Haryana State Scrapping Network', partners:[
-    { name:'Faridabad Green Shredding RVSF', reg:'RVSF/HR/2022/001', loc:'Sector 59 IMT, Faridabad', cap:'Ferrous & Non-Ferrous Closed-Loop Processing' },
-    { name:'Rohtak Auto Recycling Depot', reg:'RVSF/HR/2023/006', loc:'IMT Rohtak, Haryana', cap:'MoRTH Verified Regional Collection Depot' }
-  ]},
-  RJ: { state:'Rajasthan', title:'Rajasthan Regional Facilities', partners:[
-    { name:'Tata Motors Re.Wi.Re Scrapping Facility', reg:'RVSF/RJ/2023/001', loc:'Jaipur Industrial Zone, Rajasthan', cap:'Automated Passenger & Commercial Dismantling' },
-    { name:'Alwar Green Metal Yard', reg:'RVSF/RJ/2023/004', loc:'Matsya Industrial Area, Alwar', cap:'End-of-Life Vehicle Verification & COD Issuance' }
+  PUN: { city: 'Pune', badge: 'Authorized Facility', partners: [
+    { name: 'Mahindra Cero RVSF Processing Unit', loc: 'Automated depollution and heavy shredding, MIDC Chakan.' },
+    { name: 'Nagpur Vidarbha Clean Metals RVSF',  loc: 'Commercial vehicle and fleet recovery hub, Butibori.' }
   ]}
 };
 
@@ -78,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initModal();
   initStickyCta();
-  initTestimonials();
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 });
@@ -242,7 +219,6 @@ function estimate(type) {
 /* RECYCLE HOTSPOTS — hover a dot updates right panel */
 function initRecycle() {
   const hotspots = document.querySelectorAll('.hotspot');
-  const pills = document.querySelectorAll('.pill');
   const panel = document.getElementById('recyclePanel');
   const catEl = document.getElementById('partCategory');
   const nameEl = document.getElementById('partName');
@@ -253,7 +229,7 @@ function initRecycle() {
     const p = PARTS[key];
     if (!p) return;
     hotspots.forEach(h => h.classList.toggle('is-active', h.dataset.part === key));
-    pills.forEach(p2 => p2.classList.toggle('is-active', p2.dataset.part === key));
+    
     panel.style.opacity = '0.35';
     panel.style.transform = 'translateY(6px)';
     setTimeout(() => {
@@ -272,38 +248,36 @@ function initRecycle() {
     h.addEventListener('focus',      () => update(key));
     h.addEventListener('click',      () => update(key));
   });
-  pills.forEach(p => p.addEventListener('click', () => update(p.dataset.part)));
 }
 
-/* NETWORK */
+/* NETWORK — 5 city hubs */
 function initNetwork() {
-  const states = document.querySelectorAll('.state');
   const hubs = document.querySelectorAll('.hub');
   const select = document.getElementById('stateSelect');
   const card = document.getElementById('facilityCard');
-  const stateEl = document.getElementById('facState');
-  const titleEl = document.getElementById('facTitle');
+  const cityEl = document.getElementById('facCity');
+  const badgeEl = document.getElementById('facBadge');
   const listEl = document.getElementById('facList');
 
   const render = code => {
     const d = NETWORK[code];
     if (!d) return;
-    states.forEach(s => s.classList.toggle('is-active', s.dataset.state === code));
     hubs.forEach(h => h.classList.toggle('is-active', h.dataset.state === code));
     if (select && select.value !== code) select.value = code;
     card.style.opacity = '0.35';
     card.style.transform = 'translateY(6px)';
     setTimeout(() => {
-      stateEl.textContent = d.state;
-      titleEl.textContent = d.title;
+      cityEl.textContent  = d.city;
+      badgeEl.textContent = d.badge;
       listEl.innerHTML = d.partners.map(p => `
         <div class="facility__item">
-          <div class="facility__item-head">
+          <span class="facility__icon">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <div class="facility__item-body">
             <h4>${p.name}</h4>
-            <span class="facility__reg">${p.reg}</span>
+            <p>${p.loc}</p>
           </div>
-          <span class="facility__loc">${p.loc}</span>
-          <span class="facility__cap">${p.cap}</span>
         </div>
       `).join('');
       card.style.opacity = '1';
@@ -311,20 +285,15 @@ function initNetwork() {
     }, 100);
   };
 
-  states.forEach(s => {
-    s.addEventListener('mouseenter', () => render(s.dataset.state));
-    s.addEventListener('click',      () => render(s.dataset.state));
-  });
   hubs.forEach(h => {
     h.addEventListener('mouseenter', () => render(h.dataset.state));
     h.addEventListener('click',      () => render(h.dataset.state));
-    h.setAttribute('tabindex', '0');
     h.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); render(h.dataset.state); }
     });
   });
   if (select) select.addEventListener('change', e => render(e.target.value));
-  render('MH');
+  render('HYD');
 }
 
 /* FAQ */
@@ -410,7 +379,7 @@ function initContactForm() {
 
     try {
       await sendLead(payload);
-      toast('Thank you. Our RVSF team will approach you with in 7 days.', 'success');
+      toast('Thank you. Our RVSF team will approach you within 7 days.', 'success');
       form.reset();
     } catch (err) {
       toast('Submission failed. Please try again or email contactrvsf@mplgroup.in.', 'error');
@@ -481,52 +450,6 @@ function initStickyCta() {
     });
   }, { threshold: 0.05 });
   obs.observe(hero);
-}
-
-/* TESTIMONIALS — auto-advance every 30 seconds */
-function initTestimonials() {
-  const track = document.getElementById('tTrack');
-  const dotsWrap = document.getElementById('tDots');
-  const prevBtn = document.getElementById('tPrev');
-  const nextBtn = document.getElementById('tNext');
-  if (!track) return;
-
-  const slides = track.querySelectorAll('.testimonial__slide');
-  const total = slides.length;
-  let current = 0;
-  let timer = null;
-  const INTERVAL = 30000;
-
-  slides.forEach((_, i) => {
-    const d = document.createElement('button');
-    d.className = 'testimonial__dot' + (i === 0 ? ' is-active' : '');
-    d.setAttribute('aria-label', `Go to review ${i + 1}`);
-    d.addEventListener('click', () => go(i));
-    dotsWrap.appendChild(d);
-  });
-  const dots = dotsWrap.querySelectorAll('.testimonial__dot');
-
-  const show = idx => {
-    slides.forEach((s, i) => s.classList.toggle('is-active', i === idx));
-    dots.forEach((d, i) => d.classList.toggle('is-active', i === idx));
-  };
-  const next = () => go((current + 1) % total);
-  const prev = () => go((current - 1 + total) % total);
-  const go = idx => { current = idx; show(current); restart(); };
-  const restart = () => {
-    if (timer) clearInterval(timer);
-    timer = setInterval(next, INTERVAL);
-  };
-
-  const container = document.getElementById('testimonial');
-  container.addEventListener('mouseenter', () => { if (timer) clearInterval(timer); });
-  container.addEventListener('mouseleave', restart);
-
-  if (prevBtn) prevBtn.addEventListener('click', prev);
-  if (nextBtn) nextBtn.addEventListener('click', next);
-
-  show(0);
-  restart();
 }
 
 /* TOAST */
